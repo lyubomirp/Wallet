@@ -1,0 +1,31 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+html, body, .container-table {
+    height: 100%;
+}
+.vertical-center {
+    min-height: 80%;
+
+    display: flex;
+    align-items: center;
+}
+.swap{
+    right: 3%;
+}
+.form-control{
+    max-width: 50%;
+}
+.rate{
+    display:none;
+}
+#selected_currency{
+    max-width: 100%;
+}
+.error{
+    color:red
+}
+.commission_fee_disclaimer b{
+    text-transform: uppercase;
+}
+.card-text.inline-block b{
+    text-transform: uppercase;
+}
