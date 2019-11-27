@@ -30,7 +30,7 @@ class Transaction extends Model
             throw new \ArithmeticError('Your deposited funds are too low');
         }
 
-        Transaction::create([
+        self::create([
             'commission_fee' => $fee,
             'requested_amount' => $requested,
             'total_balance' => $previous_balance - ($requested + $fee),
@@ -48,7 +48,7 @@ class Transaction extends Model
 
         $previous_balance = self::get_latest_total($currency);
 
-        Transaction::create([
+        self::create([
             'commission_fee' => $fee,
             'requested_amount' => $requested,
             'total_balance' => $previous_balance + $requested - $fee,
