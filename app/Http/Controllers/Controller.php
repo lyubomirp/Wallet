@@ -36,14 +36,14 @@ class Controller extends BaseController
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function transactions()
-    {
-        $data['transactions'] = DB::table('transactions')
-            ->orderByDesc('created_at')
-            ->get();
-        $data['title'] = "Wallet - List Transactions";
-        return view('transactions')->with($data);
-    }
+//    public function transactions()
+//    {
+//        $data['transactions'] = DB::table('transactions')
+//            ->orderByDesc('created_at')
+//            ->get();
+//        $data['title'] = "Wallet - List Transactions";
+//        return view('transactions')->with($data);
+//    }
 
 
 }

@@ -19,7 +19,7 @@
 
 Route::get('/', 'Controller@index')->name('index');
 Route::get('/change_currency', 'Controller@change_currency')->name('change_currency');
-Route::get('/transactions', 'Controller@transactions')->name('transactions');
+//Route::get('/transactions', 'Controller@transactions')->name('transactions');
 
 /**
  * All routes related to deposits

@@ -29,3 +29,21 @@ html, body, .container-table {
 .card-text.inline-block b{
     text-transform: uppercase;
 }
+
+@media screen and (max-width: 769px){
+    .card-title{
+        min-width: 100% !important;
+    }
+    .currency_changer{
+        min-width: 100% !important;
+    }
+    .swap{
+        min-width: 50% !important;
+        position: relative !important;
+        margin: 2% auto;
+        right: 0;
+    }
+    .form-control{
+        max-width: 100% ;
+    }
+}
