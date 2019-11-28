@@ -29,6 +29,7 @@
                                 @endif
                             </div>
                             <div class="wrap-input100">
+                                <i class="fa fa-chevron-down m-l-5 dropdown-arrow" aria-hidden="true"></i>
                                 <select id="currency" name="currency" class="input100">
                                     <option selected value="eur">Euro (EUR)</option>
                                     <option value="usd">Dollar (USD)</option>
