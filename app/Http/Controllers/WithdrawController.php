@@ -13,6 +13,8 @@ class WithdrawController extends Controller
     public function withdraw()
     {
         $data['title'] = 'Wallet - withdraw';
+        $data['commission_rate'] = 0.003;
+        $data['min_commission'] = 0.5;
         $data['result'] = json_decode(file_get_contents('https://api.exchangeratesapi.io/latest?base=EUR&symbols=USD,GBP'), true);
 
         return view('withdraw')->with($data);

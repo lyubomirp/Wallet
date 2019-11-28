@@ -11,6 +11,10 @@ $('#selected_currency').on('change', function () {
         success:function(data){
             let result = JSON.parse(data);
             $('.card-text b').html(result['balance'] + " " + result['currency'])
+            $('#currency_symbol').removeClass('fa-usd')
+            $('#currency_symbol').removeClass('fa-eur')
+            $('#currency_symbol').removeClass('fa-gbp')
+            $('#currency_symbol').addClass('fa-' + result['currency'])
         }
     });
 });

@@ -13,6 +13,8 @@ class DepositController extends Controller
     public function deposit()
     {
         $data['title'] = 'Wallet - Deposit';
+        $data['commission_rate'] = 0.0003;
+        $data['max_commission'] = 5;
         $data['result'] = json_decode(file_get_contents('https://api.exchangeratesapi.io/latest?base=EUR&symbols=USD,GBP'), true);
         return view('deposit')->with($data);
     }

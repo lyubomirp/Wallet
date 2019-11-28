@@ -1,3 +1,13 @@
+let rate = Number($('#commission_rate').val());
+let max_com = Number($('#max_commission').val());
+let deposit;
+
+if (window.location.href.includes('deposit')) {
+    deposit = true
+} else {
+    deposit = false
+}
+
 $('#currency').on('change', function () {
     $('.rate').css('display', 'none');
 
@@ -14,31 +24,21 @@ $('#currency').on('change', function () {
     //  else{
     //
     //  }
-    if (window.location.href.includes('deposit')) {
-        distribution(0.0003, 5);
-
-    } else {
-        distribution(0.003, 0.5);
-    }
+    distribution(rate, max_com, deposit);
 });
 
 $('#requested_amount').on('change', function () {
-    if (window.location.href.includes('deposit')) {
-        distribution(0.0003, 5);
-
-    } else {
-        distribution(0.003, 0.5);
-    }
+    distribution(rate, max_com, deposit);
 });
 
-function distribution(multiplier, limit) {
+function distribution(multiplier, limit, deposit) {
     let exchange_rate = $('.' + $('#currency').val() + '_rate b').html();
     let result = calculate_commission(multiplier, limit, exchange_rate);
     let limit_multiplier = 1;
     if (exchange_rate) {
         limit_multiplier = limit_multiplier * exchange_rate
     }
-    if (limit === 5) {
+    if (deposit) {
         display_deposit_rates(result, limit * limit_multiplier)
     } else {
         display_withdraw_rates(result, limit * limit_multiplier)
@@ -74,3 +74,9 @@ function display_withdraw_rates(result, limit) {
         $('.commission_fee_disclaimer b').html((limit).toFixed(2) + " " + $('#currency').val());
     }
 }
+
+$(document).ready(function(){
+    setTimeout(function() {
+        $("#errorMessage").slideUp('slow')
+    }, 3000);
+});

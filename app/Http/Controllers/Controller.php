@@ -33,9 +33,6 @@ class Controller extends BaseController
         return json_encode($data);
     }
 
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
 //    public function transactions()
 //    {
 //        $data['transactions'] = DB::table('transactions')
